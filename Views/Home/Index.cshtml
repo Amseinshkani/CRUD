@@ -1,0 +1,83 @@
+﻿
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+    }
+
+    td,
+    th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+</style>
+<div style="margin-bottom:25px;">
+    <a href="Home/Student" class="btn btn-primary">AddStudent</a>
+    <a href="Home/Teacher" class="btn btn-primary">AddTeacher</a>
+</div>
+
+<table>
+    <h1>Student</h1>
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>score1</th>
+        <th>score2</th>
+        <th>score3</th>
+        <th>SumScore</th>
+    </tr>
+@foreach (var item in ViewBag.adstu)
+{
+    int a=@item.score1 + @item.score2 + @item.score3;
+       @item.SumScore = a;
+    
+      <tr>
+        <td>@item.Id</td>
+        <td>@item.FirstName</td>
+        <td>@item.LastName</td>
+        <td>@item.score1</td>
+        <td>@item.score2</td>
+        <td>@item.score3</td>
+        <td>@item.SumScore</td>
+        <td><a href="Home/UpdateStudent/@item.Id" class="btn btn-primary">Update</a></td>
+        <td><a href="Home/DeleteSt/@item.Id" class="btn btn-primary">Delete</a></td>
+    </tr> 
+}
+ 
+
+</table>
+
+  <h1 style="margin-top:100px;">Teacher</h1>
+<table>
+  
+    <tr>
+        <th>Id</th>
+        <th>FirstName</th>
+        <th>LastName</th>
+        <th>Age</th>
+        <th>RelatedEvidence</th>
+        <th>Lesson</th>
+    </tr>
+@foreach (var item in ViewBag.adteach)
+{
+  <tr>
+        <td>@item.Id</td>
+        <td>@item.FirstName</td>
+        <td>@item.LastName</td>
+        <td>@item.Age</td>
+        <td>@item.RelatedEvidence</td>
+        <td>@item.Lesson</td>
+        <td><a href="Home/UpdateTeacher/@item.Id" class="btn btn-primary">Update</a></td>
+        <td><a href="Home/DeleteTeacher/@item.Id" class="btn btn-primary">Delete</a></td>
+    </tr>  
+}
+    
+
+</table>

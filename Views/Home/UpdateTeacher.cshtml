@@ -1,0 +1,17 @@
+@model VMTeacher
+<h1>
+    Teaher
+</h1>
+<form action="/Home/EditTeacher" method="post">
+
+    <div style="margin-bottom:15px ;">
+        <input asp-for="Id" type="text" style="display:none;">
+        <input asp-for="FirstName" type="text" placeholder="FirstName">
+        <input asp-for="LastName" type="text" placeholder="LastName">
+        <input asp-for="Age" type="text" placeholder="Age">
+        <input asp-for="RelatedEvidence" type="text" placeholder="RelatedEvidence">
+        <input asp-for="Lesson" type="text" placeholder="Lesson">
+        <button type="sumbit" class="btn btn-primary">Add</button>
+    </div>
+
+</form>

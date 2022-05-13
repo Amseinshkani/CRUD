@@ -1,0 +1,23 @@
+@model VMStudent
+<h1>
+    Student
+</h1>
+<style>
+    input {
+        margin: 50px;
+    }
+</style>
+<form action="/Home/EditStudent" method="post">
+
+    <div style="margin-bottom:15px ;">
+        <input asp-for="Id" type="text" placeholder="Id" style="display:none;">
+        <input asp-for="FirstName" type="text" placeholder="FirstName">
+        <input asp-for="LastName" type="text" placeholder="LastName">
+        <input asp-for="score1" type="text" placeholder="score1">
+        <input asp-for="score2" type="text" placeholder="score2">
+        <input asp-for="score3" type="text" placeholder="score3">
+        <input asp-for="SumScore" type="text" placeholder="SumScore" disabled>
+        <button type="submit" class="btn btn-primary">Add</button>
+
+    </div>
+</form>
